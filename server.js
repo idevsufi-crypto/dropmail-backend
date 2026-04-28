@@ -3,14 +3,7 @@ const axios = require('axios');
 const cors = require('cors');
 
 const app = express();
-
-// Explicit CORS — sab origins allow
-app.use(cors({
-  origin: '*',
-  methods: ['GET', 'POST', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-}));
-app.options('*', cors());
+app.use(cors());
 app.use(express.json());
 
 const GUERRILLA_BASE = 'https://api.guerrillamail.com/ajax.php';
